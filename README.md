@@ -24,6 +24,8 @@ This is a Cisco Packet Tracer lab I made for my cybersecurity portfolio. I set i
 - `docs/services.md` - DNS, web, and Wi-Fi service settings
 - `docs/verification.md` - test matrix and expected outcomes
 - `docs/portfolio-writeup.md` - short first-person summary for a portfolio
+- `docs/portfolio-visuals.md` - diagrams and charts for the project
+- `docs/project-status.md` - work-in-progress tracker
 - `configs/` - IOS configs for each router and switch
 
 ## Portfolio angle
@@ -47,3 +49,4 @@ I would present this as a security and networking project, not just a basic Pack
 3. Paste the device configs from `configs/`.
 4. Validate the lab with `docs/verification.md`.
 5. Capture screenshots and add them to your portfolio write-up.
+6. Use `docs/project-status.md` to show what is finished and what is still in progress.
