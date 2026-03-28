@@ -2,7 +2,7 @@
 
 ## Fictional company
 
-I used **Northstar Logistics** as a fictional company name so the lab looks like a real business network without being tied to an actual company. The setup has a headquarters, a branch office, and a disaster recovery site.
+**Northstar Logistics** is the fictional company name used for the lab. It keeps the design realistic without tying the project to an actual organization. The setup has a headquarters, a branch office, and a disaster recovery site.
 
 Security goal:
 

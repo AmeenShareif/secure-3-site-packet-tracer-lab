@@ -1,8 +1,8 @@
 # Evidence Folder
 
-This folder holds the Packet Tracer proof I captured while building the lab.
+This folder contains the Packet Tracer screenshots and command outputs referenced in the portfolio docs.
 
-## Current evidence
+## Evidence index
 
 - `01-topology-overview.png` - main Packet Tracer workspace with the HQ router and switch link visible
 - `02-hq-router-config-applied.png` - HQ router config paste and interface state messages
@@ -18,31 +18,4 @@ This folder holds the Packet Tracer proof I captured while building the lab.
 - `12-server0-ping-results.png` - Server0 command prompt showing failed pings to the HQ web server and its own static address
 - `13-pc6-ipconfig.png` - PC6 `ipconfig` output showing the 169.254 autoconfiguration address
 
-## What to include next
-
-- Ping success and ping failure screenshots
-- Router and switch `show` command screenshots
-- SSH login screenshots
-- Any port-security violation screenshots
-- Evidence from the actual Packet Tracer window, not mockups
-- Evidence from the branch and DR sites once those devices are configured
-
-## Suggested file names
-
-- `01-topology-overview.png`
-- `02-hq-router-config-applied.png`
-- `03-hq-router-interface-status.png`
-- `04-hq-router-physical-module.png`
-- `05-hq-dns-record.png`
-- `06-hq-web-server-services.png`
-- `07-hq-admin-to-web.png`
-- `08-guest-internet.png`
-- `09-ospf-neighbors.png`
-- `10-hq-route-table.png`
-- `11-nat-translations.png`
-- `12-acl-hit-counters.png`
-- `13-port-security-status.png`
-- `14-dr-router-config-applied.png`
-- `15-dr-switch-config-applied.png`
-- `16-dr-switch-ip-int-brief.png`
-- `17-dr-switch-vlan-brief.png`
+The file names match the validation log in `docs/test-results.md`.

@@ -1,6 +1,6 @@
 # Security Controls
 
-These are the main controls I wanted to show in the lab.
+These are the main controls demonstrated in the lab.
 
 ## Segmentation
 

@@ -1,6 +1,6 @@
 # IP Plan
 
-I kept the addressing simple so it is easy to follow in Packet Tracer.
+The addressing plan stays simple so it is easy to follow in Packet Tracer.
 
 ## Addressing standards
 

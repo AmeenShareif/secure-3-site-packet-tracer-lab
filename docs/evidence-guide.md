@@ -1,8 +1,8 @@
 # Evidence Guide
 
-This is how I would show the actual results of the Packet Tracer lab.
+This page defines what counts as valid Packet Tracer evidence for the portfolio.
 
-## What counts as actual results
+## Valid evidence
 
 - Ping results from Packet Tracer PCs
 - Browser or web access results
@@ -11,19 +11,19 @@ This is how I would show the actual results of the Packet Tracer lab.
 - ACL hit counts or blocked traffic evidence
 - Port-security violation evidence
 
-## What to capture for each test
+## Evidence record
 
-For each test, I would record:
+For each test, record:
 
 - Test name
 - Source device
 - Destination device
 - Command used
-- What actually happened
-- Pass or fail
+- Observed result
+- Status
 - Screenshot file name
 
-## Good evidence examples
+## Example commands
 
 - `ping 10.10.50.20` from an HQ PC
 - `ping 203.0.113.10` from a guest laptop
@@ -33,20 +33,9 @@ For each test, I would record:
 - `show access-lists` on `R-HQ` or `R-BR`
 - `show port-security interface fa0/2` on a switch
 
-## Suggested screenshot names
+## Presentation format
 
-- `evidence/01-hq-admin-to-web.png`
-- `evidence/04-guest-blocked-from-dns.png`
-- `evidence/05-guest-internet.png`
-- `evidence/10-ssh-session.png`
-- `evidence/13-ospf-neighbors.png`
-- `evidence/15-nat-translations.png`
-
-## How I would present it
-
-I would keep the evidence simple:
-
-1. One short explanation of the test
-2. One screenshot or command output
-3. One sentence saying whether it passed
-4. One note about why the result matters for security
+- One short note about the test
+- One screenshot or command output
+- One sentence stating the result
+- One note about the security meaning of the result

@@ -1,12 +1,12 @@
 # Portfolio Write-Up
 
-I built this Cisco Packet Tracer lab to practice secure network design and to have something stronger for my cybersecurity portfolio. I used a fictional company so I could keep the network realistic without tying it to a real business.
+I created this Cisco Packet Tracer lab for my cybersecurity portfolio. The design uses a fictional company so the network feels realistic without tying the project to a real business.
 
-The lab has three sites: a headquarters, a branch office, and a disaster recovery site. I separated the network into VLANs for admin, HR, finance, IT, servers, guest Wi-Fi, and management. I also added OSPF for routing, DHCP for clients, NAT/PAT for internet access, ACLs to limit traffic, SSH for management, and port security on switch ports.
+The lab covers three sites: HQ, Branch, and disaster recovery. It uses VLAN segmentation for admin, HR, finance, IT, servers, guest Wi-Fi, and management. OSPF, DHCP, NAT/PAT, ACLs, SSH management, and port security are included to show a layered security design.
 
-What I wanted to show with this project is that I understand more than basic connectivity. I wanted the network to show security thinking, like least privilege, segmentation, and controlled access between different parts of the network.
+The goal of the project is to show more than basic connectivity. It demonstrates segmentation, least privilege, controlled management access, and validation through screenshots and command output.
 
-I have already verified the HQ router inside Packet Tracer and captured screenshots of the real device state. I am still building out the remaining sites and test cases, so the repo shows real progress instead of pretending everything is finished.
+The repo includes screenshots and test results from Packet Tracer so the portfolio reflects an actual build snapshot.
 
 ### What I practiced
 

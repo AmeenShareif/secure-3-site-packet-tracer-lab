@@ -1,6 +1,6 @@
 # Build Steps
 
-This is the order I would use in Packet Tracer.
+This is the build order used in Packet Tracer.
 
 ## 1. Place devices
 

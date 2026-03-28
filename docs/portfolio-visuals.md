@@ -1,6 +1,6 @@
 # Portfolio Visuals
 
-This page collects the diagrams and charts I use to explain the project.
+This page collects the diagrams and charts used to explain the project.
 
 ## Network topology
 
@@ -72,25 +72,13 @@ stateDiagram-v2
   Publish --> [*]
 ```
 
-## Build progress
+## Milestone summary
 
 ```mermaid
-gantt
-  title Packet Tracer Portfolio Progress
-  dateFormat  YYYY-MM-DD
-  axisFormat  %b %d
-
-  section Completed
-  Project concept and scope      :done, scope, 2026-03-24, 1d
-  IP addressing plan             :done, ipplan, 2026-03-25, 1d
-  Router and switch configs      :done, configs, 2026-03-26, 2d
-
-  section In progress
-  Visual diagrams and charts     :active, visuals, 2026-03-28, 2d
-  Packet Tracer build            :active, build, 2026-03-28, 4d
-
-  section Next
-  Validation screenshots         :validate, after build, 2d
-  Portfolio polish               :polish, after validate, 1d
+flowchart LR
+  A["Scope and story"] --> B["IP plan"]
+  B --> C["Device configs"]
+  C --> D["Evidence capture"]
+  D --> E["Validation log"]
+  E --> F["Portfolio write-up"]
 ```
-

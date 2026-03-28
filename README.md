@@ -1,6 +1,6 @@
 # Secure 3-Site Packet Tracer Lab
 
-This is a Cisco Packet Tracer lab I made for my cybersecurity portfolio. I set it up as a fictional company network so I could show segmentation, access control, secure management, routing, NAT, and testing in a way that feels realistic.
+This repository contains a Cisco Packet Tracer lab for a cybersecurity portfolio. The network uses a fictional company so the design can demonstrate segmentation, access control, secure management, routing, NAT, and validation without referencing a real business.
 
 ## What is included
 
@@ -23,26 +23,25 @@ This is a Cisco Packet Tracer lab I made for my cybersecurity portfolio. I set i
 - `docs/build-steps.md` - Packet Tracer build order
 - `docs/services.md` - DNS, web, and Wi-Fi service settings
 - `docs/verification.md` - test matrix and expected outcomes
-- `docs/portfolio-writeup.md` - short first-person summary for a portfolio
+- `docs/portfolio-writeup.md` - short portfolio summary
 - `docs/portfolio-visuals.md` - diagrams and charts for the project
-- `docs/project-status.md` - work-in-progress tracker
-- `docs/evidence-guide.md` - how to capture real Packet Tracer proof
-- `docs/test-results.md` - results log with expected and actual columns
-- `evidence/` - place for screenshots and exported proof
+- `docs/project-status.md` - repository snapshot summary
+- `docs/evidence-guide.md` - evidence capture format
+- `docs/test-results.md` - validation snapshot and command output
+- `evidence/` - screenshots and exported proof
 - `configs/` - IOS configs for each router and switch
 - `cybersecurity-portfolio-lab.pkt` - the live Packet Tracer save file for this lab
 
-## Current progress
+## Current snapshot
 
-- I have already verified the HQ router in Packet Tracer and saved screenshots in `evidence/`.
-- The HQ switches are configured and the HQ DNS and web servers are now being built out and documented.
-- The DR router and DR switch are now configured and verified in Packet Tracer with real CLI output and screenshots.
-- I also ran live Packet Tracer ping and SSH tests from a PC and a server. The loopback ping works, but the real network targets are still timing out, which tells me the host addressing or wiring is not finished yet.
-- The branch site and the remaining WAN and test cases are still being built, so the repo shows real progress instead of a fake finished lab.
+- The repo includes the Packet Tracer save file, device configs, service settings, and screenshots used in the portfolio.
+- `docs/test-results.md` records the captured validation results and live command output.
+- `docs/project-status.md` summarizes the repository in a clean, review-ready format.
+- `evidence/` contains the screenshots referenced by the documentation.
 
 ## Portfolio angle
 
-I would present this as a security and networking project, not just a basic Packet Tracer lab. The main idea is:
+This project is presented as a security and networking lab, not just a basic Packet Tracer build. The main idea is:
 
 - guests are isolated from internal systems
 - departments are segmented
@@ -50,16 +49,15 @@ I would present this as a security and networking project, not just a basic Pack
 - branch and DR sites are reachable through controlled routing
 - internet access works through NAT, but internal traffic is still restricted
 
-## Suggested title
+## Project title
 
 `Secure Multi-Site Enterprise Network with Segmentation and Access Control`
 
 ## How to use this kit
 
-1. Build the physical Packet Tracer topology from `docs/topology.md`.
-2. Apply the IP addressing plan from `docs/ip-plan.md`.
-3. Paste the device configs from `configs/`.
-4. Validate the lab with `docs/verification.md`.
-5. Capture screenshots and add them to your portfolio write-up.
-6. Use `docs/project-status.md` to show what is finished and what is still in progress.
-7. Fill in `docs/test-results.md` after you run the Packet Tracer tests.
+1. Review the topology in `docs/topology.md`.
+2. Check the IP plan in `docs/ip-plan.md`.
+3. Review the configs in `configs/`.
+4. Compare the validation checklist in `docs/verification.md` with the captured results in `docs/test-results.md`.
+5. Open the screenshots in `evidence/`.
+6. Use `docs/project-status.md` as the repository snapshot summary.

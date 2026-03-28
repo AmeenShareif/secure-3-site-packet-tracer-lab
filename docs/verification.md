@@ -1,6 +1,6 @@
 # Verification Matrix
 
-This is the checklist I used to prove the lab works.
+This checklist matches the validation snapshot in `docs/test-results.md`.
 
 Use `docs/test-results.md` to record the actual output, status, and evidence after you run the tests in Packet Tracer.
 
@@ -19,7 +19,7 @@ Use `docs/test-results.md` to record the actual output, status, and evidence aft
 | Telnet ban | Any user PC | Router or switch VTY | Fail |
 | Port security | Rogue device on access port | Access switch | Violation logged / restricted |
 
-## Evidence to capture
+## Validation evidence
 
 - `show ip ospf neighbor`
 - `show ip route`

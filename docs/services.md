@@ -1,6 +1,6 @@
 # Services
 
-These are the services I turned on in Packet Tracer.
+These are the services configured in Packet Tracer.
 
 ## HQ DNS server
 
