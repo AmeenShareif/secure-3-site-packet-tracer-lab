@@ -2,6 +2,8 @@
 
 This is the checklist I used to prove the lab works.
 
+Use `docs/test-results.md` to record the actual output, status, and evidence after you run the tests in Packet Tracer.
+
 | Test | Source | Destination | Expected result |
 | --- | --- | --- | --- |
 | Internal web access | HQ Admin PC | HQ Web Server `10.10.50.20` | Success |
