@@ -30,6 +30,15 @@ This is a Cisco Packet Tracer lab I made for my cybersecurity portfolio. I set i
 - `docs/test-results.md` - results log with expected and actual columns
 - `evidence/` - place for screenshots and exported proof
 - `configs/` - IOS configs for each router and switch
+- `cybersecurity-portfolio-lab.pkt` - the live Packet Tracer save file for this lab
+
+## Current progress
+
+- I have already verified the HQ router in Packet Tracer and saved screenshots in `evidence/`.
+- The HQ switches are configured and the HQ DNS and web servers are now being built out and documented.
+- The DR router and DR switch are now configured and verified in Packet Tracer with real CLI output and screenshots.
+- I also ran live Packet Tracer ping and SSH tests from a PC and a server. The loopback ping works, but the real network targets are still timing out, which tells me the host addressing or wiring is not finished yet.
+- The branch site and the remaining WAN and test cases are still being built, so the repo shows real progress instead of a fake finished lab.
 
 ## Portfolio angle
 

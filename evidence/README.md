@@ -1,30 +1,48 @@
 # Evidence Folder
 
-Put Packet Tracer screenshots and exported proof here.
+This folder holds the Packet Tracer proof I captured while building the lab.
 
-## Suggested file names
+## Current evidence
 
-- `01-hq-admin-to-web.png`
-- `02-hr-isolation.png`
-- `03-finance-isolation.png`
-- `04-guest-blocked-from-dns.png`
-- `05-guest-internet.png`
-- `06-branch-to-internet.png`
-- `07-branch-blocked-from-hq-admin.png`
-- `08-branch-to-hq-web.png`
-- `09-dr-it-to-hq-web.png`
-- `10-ssh-session.png`
-- `11-telnet-blocked.png`
-- `12-port-security-violation.png`
-- `13-ospf-neighbors.png`
-- `14-hq-route-table.png`
-- `15-nat-translations.png`
-- `16-acl-hit-counters.png`
-- `17-port-security-status.png`
+- `01-topology-overview.png` - main Packet Tracer workspace with the HQ router and switch link visible
+- `02-hq-router-config-applied.png` - HQ router config paste and interface state messages
+- `03-hq-router-interface-status.png` - `show ip interface brief` on `R-HQ`
+- `04-hq-router-physical-module.png` - HQ router physical view with the serial module installed
+- `05-hq-dns-record.png` - HQ DNS server configured with the `intranet.corp.lab` A record
+- `06-hq-web-server-services.png` - HQ web server services page with the site files visible
+- `07-dr-router-config-applied.png` - DR router config paste output and completed `R-DR#` prompt
+- `08-dr-switch-config-applied.png` - DR switch config paste output and completed `SW-DR#` prompt
+- `09-dr-switch-ip-int-brief.png` - DR switch `show ip interface brief` showing `Vlan299` up/up
+- `10-dr-switch-vlan-brief.png` - DR switch `show vlan brief` showing the DR VLANs and port membership
+- `11-pc6-live-command-results.png` - PC6 command prompt showing the APIPA address check, loopback ping success, and SSH failure
+- `12-server0-ping-results.png` - Server0 command prompt showing failed pings to the HQ web server and its own static address
+- `13-pc6-ipconfig.png` - PC6 `ipconfig` output showing the 169.254 autoconfiguration address
 
-## What to include
+## What to include next
 
 - Ping success and ping failure screenshots
 - Router and switch `show` command screenshots
 - SSH login screenshots
 - Any port-security violation screenshots
+- Evidence from the actual Packet Tracer window, not mockups
+- Evidence from the branch and DR sites once those devices are configured
+
+## Suggested file names
+
+- `01-topology-overview.png`
+- `02-hq-router-config-applied.png`
+- `03-hq-router-interface-status.png`
+- `04-hq-router-physical-module.png`
+- `05-hq-dns-record.png`
+- `06-hq-web-server-services.png`
+- `07-hq-admin-to-web.png`
+- `08-guest-internet.png`
+- `09-ospf-neighbors.png`
+- `10-hq-route-table.png`
+- `11-nat-translations.png`
+- `12-acl-hit-counters.png`
+- `13-port-security-status.png`
+- `14-dr-router-config-applied.png`
+- `15-dr-switch-config-applied.png`
+- `16-dr-switch-ip-int-brief.png`
+- `17-dr-switch-vlan-brief.png`
