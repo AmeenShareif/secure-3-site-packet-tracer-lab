@@ -1,0 +1,173 @@
+hostname R-HQ
+no ip domain-lookup
+service password-encryption
+enable secret C1sc0!HQ
+banner motd ^CUnauthorized access prohibited. Authorized security lab only.^C
+ip domain-name corp.lab
+username netadmin privilege 15 secret N3tAdm1n!2026
+crypto key generate rsa modulus 1024
+ip ssh version 2
+ip ssh time-out 60
+ip ssh authentication-retries 2
+!
+interface GigabitEthernet0/0
+ no ip address
+ no shutdown
+!
+interface GigabitEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 10.10.10.1 255.255.255.0
+ ip nat inside
+ no ip redirects
+ no ip proxy-arp
+!
+interface GigabitEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 10.10.20.1 255.255.255.0
+ ip nat inside
+ no ip redirects
+ no ip proxy-arp
+ ip access-group ACL_HQ_HR_IN in
+!
+interface GigabitEthernet0/0.30
+ encapsulation dot1Q 30
+ ip address 10.10.30.1 255.255.255.0
+ ip nat inside
+ no ip redirects
+ no ip proxy-arp
+ ip access-group ACL_HQ_FIN_IN in
+!
+interface GigabitEthernet0/0.40
+ encapsulation dot1Q 40
+ ip address 10.10.40.1 255.255.255.0
+ ip nat inside
+ no ip redirects
+ no ip proxy-arp
+!
+interface GigabitEthernet0/0.50
+ encapsulation dot1Q 50
+ ip address 10.10.50.1 255.255.255.0
+ ip nat inside
+ no ip redirects
+ no ip proxy-arp
+!
+interface GigabitEthernet0/0.60
+ encapsulation dot1Q 60
+ ip address 10.10.60.1 255.255.255.0
+ ip nat inside
+ no ip redirects
+ no ip proxy-arp
+ ip access-group ACL_HQ_GUEST_IN in
+!
+interface GigabitEthernet0/0.99
+ encapsulation dot1Q 99
+ ip address 10.10.99.1 255.255.255.0
+ ip nat inside
+ no ip redirects
+ no ip proxy-arp
+!
+interface GigabitEthernet0/1
+ description To ISP
+ ip address 198.51.100.2 255.255.255.252
+ ip nat outside
+ no shutdown
+!
+interface Serial0/0/0
+ description To Branch
+ ip address 172.16.0.1 255.255.255.252
+ ip nat inside
+ clock rate 64000
+ no shutdown
+!
+interface Serial0/0/1
+ description To DR
+ ip address 172.16.0.5 255.255.255.252
+ ip nat inside
+ clock rate 64000
+ no shutdown
+!
+ip dhcp excluded-address 10.10.10.1 10.10.10.49
+ip dhcp excluded-address 10.10.20.1 10.10.20.49
+ip dhcp excluded-address 10.10.30.1 10.10.30.49
+ip dhcp excluded-address 10.10.40.1 10.10.40.49
+ip dhcp excluded-address 10.10.60.1 10.10.60.49
+!
+ip dhcp pool HQ-ADMIN
+ network 10.10.10.0 255.255.255.0
+ default-router 10.10.10.1
+ dns-server 10.10.50.10
+ domain-name corp.lab
+!
+ip dhcp pool HQ-HR
+ network 10.10.20.0 255.255.255.0
+ default-router 10.10.20.1
+ dns-server 10.10.50.10
+ domain-name corp.lab
+!
+ip dhcp pool HQ-FINANCE
+ network 10.10.30.0 255.255.255.0
+ default-router 10.10.30.1
+ dns-server 10.10.50.10
+ domain-name corp.lab
+!
+ip dhcp pool HQ-IT
+ network 10.10.40.0 255.255.255.0
+ default-router 10.10.40.1
+ dns-server 10.10.50.10
+ domain-name corp.lab
+!
+ip dhcp pool HQ-GUEST
+ network 10.10.60.0 255.255.255.0
+ default-router 10.10.60.1
+ dns-server 203.0.113.10
+ domain-name guest.lab
+!
+ip access-list extended ACL_HQ_HR_IN
+ permit ip 10.10.20.0 0.0.0.255 10.10.50.0 0.0.0.255
+ deny ip 10.10.20.0 0.0.0.255 10.0.0.0 0.255.255.255
+ deny ip 10.10.20.0 0.0.0.255 172.16.0.0 0.15.255.255
+ deny ip 10.10.20.0 0.0.0.255 192.168.0.0 0.0.255.255
+ permit ip 10.10.20.0 0.0.0.255 any
+!
+ip access-list extended ACL_HQ_FIN_IN
+ permit ip 10.10.30.0 0.0.0.255 10.10.50.0 0.0.0.255
+ deny ip 10.10.30.0 0.0.0.255 10.0.0.0 0.255.255.255
+ deny ip 10.10.30.0 0.0.0.255 172.16.0.0 0.15.255.255
+ deny ip 10.10.30.0 0.0.0.255 192.168.0.0 0.0.255.255
+ permit ip 10.10.30.0 0.0.0.255 any
+!
+ip access-list extended ACL_HQ_GUEST_IN
+ deny ip 10.10.60.0 0.0.0.255 10.0.0.0 0.255.255.255
+ deny ip 10.10.60.0 0.0.0.255 172.16.0.0 0.15.255.255
+ deny ip 10.10.60.0 0.0.0.255 192.168.0.0 0.0.255.255
+ permit ip 10.10.60.0 0.0.0.255 any
+!
+access-list 10 permit 10.10.0.0 0.0.255.255
+access-list 10 permit 10.20.0.0 0.0.255.255
+access-list 10 permit 10.30.0.0 0.0.255.255
+ip nat inside source list 10 interface GigabitEthernet0/1 overload
+!
+ip route 0.0.0.0 0.0.0.0 198.51.100.1
+!
+router ospf 1
+ router-id 1.1.1.1
+ passive-interface default
+ no passive-interface Serial0/0/0
+ no passive-interface Serial0/0/1
+ network 10.10.0.0 0.0.255.255 area 0
+ network 172.16.0.0 0.0.0.3 area 0
+ network 172.16.0.4 0.0.0.3 area 0
+ default-information originate
+!
+line con 0
+ password C0nsole!HQ
+ login
+ exec-timeout 5 0
+ logging synchronous
+!
+line vty 0 4
+ login local
+ transport input ssh
+ exec-timeout 10 0
+!
+end

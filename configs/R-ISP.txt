@@ -1,0 +1,31 @@
+hostname R-ISP
+no ip domain-lookup
+service password-encryption
+enable secret C1sc0!ISP
+ip domain-name corp.lab
+username netadmin privilege 15 secret N3tAdm1n!2026
+crypto key generate rsa modulus 1024
+ip ssh version 2
+!
+interface GigabitEthernet0/0
+ description To R-HQ G0/1
+ ip address 198.51.100.1 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet0/1
+ description Public Server
+ ip address 203.0.113.1 255.255.255.0
+ no shutdown
+!
+line con 0
+ password C0nsole!ISP
+ login
+ exec-timeout 5 0
+ logging synchronous
+!
+line vty 0 4
+ login local
+ transport input ssh
+ exec-timeout 10 0
+!
+end

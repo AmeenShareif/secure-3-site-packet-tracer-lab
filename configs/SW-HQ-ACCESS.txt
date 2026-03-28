@@ -1,0 +1,111 @@
+hostname SW-HQ-ACCESS
+no ip domain-lookup
+service password-encryption
+enable secret C1sc0!SWHA
+vtp mode transparent
+spanning-tree mode rapid-pvst
+ip domain-name corp.lab
+username netadmin privilege 15 secret N3tAdm1n!2026
+crypto key generate rsa modulus 1024
+ip ssh version 2
+!
+vlan 10
+ name ADMIN
+vlan 20
+ name HR
+vlan 30
+ name FINANCE
+vlan 40
+ name IT
+vlan 50
+ name SERVERS
+vlan 60
+ name GUEST
+vlan 99
+ name MGMT
+vlan 999
+ name UNUSED_NATIVE
+!
+interface GigabitEthernet0/1
+ description To SW-HQ-CORE
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,40,50,60,99
+ switchport nonegotiate
+!
+interface FastEthernet0/2
+ description Admin PC
+ switchport mode access
+ switchport access vlan 10
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface FastEthernet0/3
+ description HR PC
+ switchport mode access
+ switchport access vlan 20
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface FastEthernet0/4
+ description Finance PC
+ switchport mode access
+ switchport access vlan 30
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface FastEthernet0/5
+ description IT PC
+ switchport mode access
+ switchport access vlan 40
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface FastEthernet0/6
+ description HQ Guest AP
+ switchport mode access
+ switchport access vlan 60
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface vlan 99
+ ip address 10.10.99.3 255.255.255.0
+ no shutdown
+!
+ip default-gateway 10.10.99.1
+!
+line con 0
+ password C0nsole!SW
+ login
+ exec-timeout 5 0
+ logging synchronous
+!
+line vty 0 4
+ login local
+ transport input ssh
+ exec-timeout 10 0
+!
+interface range FastEthernet0/7 - 24
+ shutdown
+!
+end
+

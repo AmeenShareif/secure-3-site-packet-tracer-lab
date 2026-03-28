@@ -1,0 +1,49 @@
+# Secure 3-Site Packet Tracer Lab
+
+This is a Cisco Packet Tracer lab I made for my cybersecurity portfolio. I set it up as a fictional company network so I could show segmentation, access control, secure management, routing, NAT, and testing in a way that feels realistic.
+
+## What is included
+
+- 3 sites: HQ, Branch, and DR
+- VLAN segmentation for users, guests, servers, and management
+- Inter-VLAN routing with router-on-a-stick
+- OSPF between all sites
+- DHCP pools for each user network
+- NAT/PAT at the HQ edge
+- ACLs for guest isolation and department restrictions
+- SSH-only device management
+- Switch port security and unused-port shutdown
+- Internet simulation through an ISP router and public server
+
+## Folder guide
+
+- `docs/topology.md` - network story and topology diagram
+- `docs/ip-plan.md` - VLANs, subnets, gateways, and host addressing
+- `docs/security-controls.md` - control-by-control security summary
+- `docs/build-steps.md` - Packet Tracer build order
+- `docs/services.md` - DNS, web, and Wi-Fi service settings
+- `docs/verification.md` - test matrix and expected outcomes
+- `docs/portfolio-writeup.md` - short first-person summary for a portfolio
+- `configs/` - IOS configs for each router and switch
+
+## Portfolio angle
+
+I would present this as a security and networking project, not just a basic Packet Tracer lab. The main idea is:
+
+- guests are isolated from internal systems
+- departments are segmented
+- only approved users can manage network devices
+- branch and DR sites are reachable through controlled routing
+- internet access works through NAT, but internal traffic is still restricted
+
+## Suggested title
+
+`Secure Multi-Site Enterprise Network with Segmentation and Access Control`
+
+## How to use this kit
+
+1. Build the physical Packet Tracer topology from `docs/topology.md`.
+2. Apply the IP addressing plan from `docs/ip-plan.md`.
+3. Paste the device configs from `configs/`.
+4. Validate the lab with `docs/verification.md`.
+5. Capture screenshots and add them to your portfolio write-up.

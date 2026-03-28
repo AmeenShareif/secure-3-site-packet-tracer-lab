@@ -1,0 +1,69 @@
+hostname R-DR
+no ip domain-lookup
+service password-encryption
+enable secret C1sc0!DR
+banner motd ^CUnauthorized access prohibited. Authorized security lab only.^C
+ip domain-name corp.lab
+username netadmin privilege 15 secret N3tAdm1n!2026
+crypto key generate rsa modulus 1024
+ip ssh version 2
+ip ssh time-out 60
+ip ssh authentication-retries 2
+!
+interface GigabitEthernet0/0
+ no ip address
+ no shutdown
+!
+interface GigabitEthernet0/0.210
+ encapsulation dot1Q 210
+ ip address 10.30.10.1 255.255.255.0
+ no ip redirects
+ no ip proxy-arp
+!
+interface GigabitEthernet0/0.220
+ encapsulation dot1Q 220
+ ip address 10.30.20.1 255.255.255.0
+ no ip redirects
+ no ip proxy-arp
+!
+interface GigabitEthernet0/0.299
+ encapsulation dot1Q 299
+ ip address 10.30.99.1 255.255.255.0
+ no ip redirects
+ no ip proxy-arp
+!
+interface Serial0/0/0
+ description To R-HQ
+ ip address 172.16.0.6 255.255.255.252
+ no shutdown
+!
+ip dhcp excluded-address 10.30.10.1 10.30.10.49
+ip dhcp excluded-address 10.30.20.1 10.30.20.49
+ip dhcp excluded-address 10.30.99.1 10.30.99.49
+!
+ip dhcp pool DR-IT
+ network 10.30.10.0 255.255.255.0
+ default-router 10.30.10.1
+ dns-server 10.10.50.10
+ domain-name corp.lab
+!
+router ospf 1
+ router-id 3.3.3.3
+ passive-interface default
+ no passive-interface Serial0/0/0
+ network 10.30.0.0 0.0.255.255 area 0
+ network 172.16.0.4 0.0.0.3 area 0
+!
+line con 0
+ password C0nsole!DR
+ login
+ exec-timeout 5 0
+ logging synchronous
+!
+line vty 0 4
+ login local
+ transport input ssh
+ exec-timeout 10 0
+!
+end
+
