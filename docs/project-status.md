@@ -21,7 +21,5 @@ This page shows what is done, what is in progress, and what is still left for th
 - Building the actual Packet Tracer topology
 - Testing traffic that should be allowed and traffic that should be blocked
 
-## Short summary
 
-I want this project to look like a real cybersecurity lab, but I also want it to feel like something I personally built and documented as a student.
 
