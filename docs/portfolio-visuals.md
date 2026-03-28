@@ -48,9 +48,9 @@ flowchart LR
   U["User VLANs"]
   S["Server VLAN"]
   M["Management VLAN"]
-  I["Internet"]
+  NET["Internet"]
 
-  G -->|"Internet only"| I
+  G -->|"Internet only"| NET
   U -->|"Approved access"| S
   M -->|"SSH and admin access"| U
   M -->|"SSH and admin access"| S
