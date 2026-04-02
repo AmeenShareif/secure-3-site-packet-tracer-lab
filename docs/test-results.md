@@ -1,6 +1,6 @@
 # Test Results
 
-This file records the Packet Tracer validation snapshot already captured in the repo.
+This file records the final Packet Tracer validation captured for the portfolio repo.
 
 ## Captured setup evidence
 
@@ -17,18 +17,15 @@ This file records the Packet Tracer validation snapshot already captured in the 
 | DR switch interfaces | `show ip interface brief` on `SW-DR` shows `Vlan299` at `10.30.99.2` and `up/up`. | Pass | `evidence/09-dr-switch-ip-int-brief.png` |
 | DR switch VLANs | `show vlan brief` on `SW-DR` shows VLANs `210`, `220`, and `299` created with the expected port memberships. | Pass | `evidence/10-dr-switch-vlan-brief.png` |
 
-## Live command capture
+## Final validation
 
 | Test | Source | Destination | Result | Evidence |
 | --- | --- | --- | --- | --- |
-| PC6 ping to HQ web server | `PC6` | `10.10.50.20` | Fail, all 4 packets timed out | `evidence/11-pc6-live-command-results.png` |
-| PC6 local loopback | `PC6` | `127.0.0.1` | Success, 4 replies received | `evidence/11-pc6-live-command-results.png` |
-| PC6 SSH attempt | `PC6` | `10.10.50.10` | Fail, remote host not responding | `evidence/11-pc6-live-command-results.png` |
-| PC6 address check | `PC6` | Local IP config | Shows APIPA `169.254.48.39` and no default gateway | `evidence/13-pc6-ipconfig.png` |
-| Server0 ping to HQ web server | `Server0` | `10.10.50.20` | Fail, all 4 packets timed out | `evidence/12-server0-ping-results.png` |
-| Server0 ping to its own IP | `Server0` | `10.10.50.10` | Fail, request timed out | `evidence/12-server0-ping-results.png` |
+| Guest gateway ping | `PC6` | `10.10.60.1` | Success, 4 replies received | `evidence/11-pc6-ping-gateway-success.png` |
+| Guest private-network block | `PC6` | `10.10.50.10` | Blocked, destination host unreachable | `evidence/12-pc6-ping-private-blocked.png` |
+| Secure management SSH | `Router0` | `10.10.99.3` | Success, SSH session reached `SW-HQ-ACCESS#` and returned `show ip interface brief` output | `evidence/13-router0-ssh-switch1.png` |
 
 ## Reading the snapshot
 
 - The setup evidence confirms the HQ and DR portions of the lab that are already documented in the repo.
-- The live capture section preserves the current network behavior exactly as it was observed in Packet Tracer.
+- The final validation section shows the completed security story: guest traffic can reach only the gateway, private internal traffic is blocked, and authenticated management access works over SSH.

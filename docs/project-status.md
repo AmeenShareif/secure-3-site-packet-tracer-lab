@@ -1,6 +1,6 @@
-# Repository Snapshot
+# Repository State
 
-This page summarizes what is already included in the Packet Tracer portfolio repo.
+This page summarizes the final Packet Tracer portfolio state already included in the repo.
 
 ## Current snapshot
 
@@ -17,5 +17,5 @@ This page summarizes what is already included in the Packet Tracer portfolio rep
 
 ## Repository note
 
-The repository is organized as a portfolio snapshot, so the documentation, configs, evidence, and write-up all point to the same project state.
+The repository is organized as a finished portfolio package, so the documentation, configs, evidence, and write-up all point to the same validated project state.
 

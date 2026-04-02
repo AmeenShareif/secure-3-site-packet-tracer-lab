@@ -14,8 +14,8 @@ This folder contains the Packet Tracer screenshots and command outputs reference
 - `08-dr-switch-config-applied.png` - DR switch config paste output and completed `SW-DR#` prompt
 - `09-dr-switch-ip-int-brief.png` - DR switch `show ip interface brief` showing `Vlan299` up/up
 - `10-dr-switch-vlan-brief.png` - DR switch `show vlan brief` showing the DR VLANs and port membership
-- `11-pc6-live-command-results.png` - PC6 command prompt showing the APIPA address check, loopback ping success, and SSH failure
-- `12-server0-ping-results.png` - Server0 command prompt showing failed pings to the HQ web server and its own static address
-- `13-pc6-ipconfig.png` - PC6 `ipconfig` output showing the 169.254 autoconfiguration address
+- `11-pc6-ping-gateway-success.png` - PC6 command prompt showing successful ping replies from the guest gateway
+- `12-pc6-ping-private-blocked.png` - PC6 command prompt showing the blocked ping to the private HQ server subnet
+- `13-router0-ssh-switch1.png` - Router0 SSH session to `SW-HQ-ACCESS` showing the live remote management shell
 
 The file names match the validation log in `docs/test-results.md`.

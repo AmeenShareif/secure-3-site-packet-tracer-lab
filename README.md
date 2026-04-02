@@ -35,7 +35,7 @@ This repository contains a Cisco Packet Tracer lab for a cybersecurity portfolio
 ## Current snapshot
 
 - The repo includes the Packet Tracer save file, device configs, service settings, and screenshots used in the portfolio.
-- `docs/test-results.md` records the captured validation results and live command output.
+- `docs/test-results.md` records the final validation results for guest isolation and SSH management.
 - `docs/project-status.md` summarizes the repository in a clean, review-ready format.
 - `evidence/` contains the screenshots referenced by the documentation.
 
