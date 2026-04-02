@@ -1,31 +1,42 @@
 # Test Results
 
-This file records the final Packet Tracer validation captured for the portfolio repo.
+This file records the live Packet Tracer proof captured for the portfolio repo.
 
-## Captured setup evidence
+Every row points to a screenshot in `evidence/`, and every screenshot shows a real state change, configuration value, or live result.
+
+## Whole-lab proof
 
 | Check | Actual result | Status | Evidence |
 | --- | --- | --- | --- |
-| Topology overview | Packet Tracer workspace shows the HQ topology and the Router0 to Switch1 link. | Pass | `evidence/01-topology-overview.png` |
-| HQ router config | `R-HQ` accepted the pasted config and returned to the router prompt. | Pass | `evidence/02-hq-router-config-applied.png` |
-| HQ router interfaces | `show ip interface brief` shows the HQ subinterfaces up/up, `GigabitEthernet0/1` up/down, and the serial interfaces present on the 1941. | Pass | `evidence/03-hq-router-interface-status.png` |
-| HQ router module install | The HWIC serial module is installed in the router physical view. | Pass | `evidence/04-hq-router-physical-module.png` |
-| HQ DNS server | `Server0` is configured with `10.10.50.10/24`, gateway `10.10.50.1`, and the `intranet.corp.lab` A record points at `10.10.50.20`. | Pass | `evidence/05-hq-dns-record.png` |
-| HQ web server | `Server1` is configured with `10.10.50.20/24`, gateway `10.10.50.1`, and the HTTP service page is visible. | Pass | `evidence/06-hq-web-server-services.png` |
-| DR router config | `R-DR` accepted the pasted config, created the DR subinterfaces and OSPF settings, and returned to the `R-DR#` prompt. | Pass | `evidence/07-dr-router-config-applied.png` |
-| DR switch config | `SW-DR` accepted the pasted config, created the DR VLANs, and returned to the `SW-DR#` prompt. | Pass | `evidence/08-dr-switch-config-applied.png` |
-| DR switch interfaces | `show ip interface brief` on `SW-DR` shows `Vlan299` at `10.30.99.2` and `up/up`. | Pass | `evidence/09-dr-switch-ip-int-brief.png` |
-| DR switch VLANs | `show vlan brief` on `SW-DR` shows VLANs `210`, `220`, and `299` created with the expected port memberships. | Pass | `evidence/10-dr-switch-vlan-brief.png` |
+| Lab overview | The Packet Tracer workspace shows the full lab layout and device placement. | Pass | `evidence/01-topology-overview.png` |
+| Live link-state | The workspace list shows the connected links in green where expected. | Pass | `evidence/11-workspace-links-live.png` |
 
-## Final validation
+## HQ proof
 
-| Test | Source | Destination | Result | Evidence |
-| --- | --- | --- | --- | --- |
-| Guest gateway ping | `PC6` | `10.10.60.1` | Success, 4 replies received | `evidence/11-pc6-ping-gateway-success.png` |
-| Guest private-network block | `PC6` | `10.10.50.10` | Blocked, destination host unreachable | `evidence/12-pc6-ping-private-blocked.png` |
-| Secure management SSH | `Router0` | `10.10.99.3` | Success, SSH session reached `SW-HQ-ACCESS#` and returned `show ip interface brief` output | `evidence/13-router0-ssh-switch1.png` |
+| Check | Actual result | Status | Evidence |
+| --- | --- | --- | --- |
+| HQ router config import | `Router0` accepted the HQ config merge and returned the success dialog. | Pass | `evidence/02-hq-router-config-applied.png`, `evidence/12-router0-config-merge-success.png` |
+| HQ router interface state | `R-HQ` shows the expected subinterfaces and up/up status in `show ip interface brief`. | Pass | `evidence/03-hq-router-interface-status.png` |
+| HQ router hardware | The router physical view shows the serial module installed. | Pass | `evidence/04-hq-router-physical-module.png` |
+| HQ DNS service | The DNS server includes the `intranet.corp.lab` A record. | Pass | `evidence/05-hq-dns-record.png` |
+| HQ web service | The web server services page shows the site files loaded. | Pass | `evidence/06-hq-web-server-services.png` |
+| HQ core switch config import | `Switch0` accepted the core switch config merge and returned the success dialog. | Pass | `evidence/13-switch0-config-merge-success.png` |
+| HQ access switch config import | `Switch1` accepted the access switch config merge and returned the success dialog. | Pass | `evidence/14-switch1-config-merge-success.png` |
+| HQ server addressing | `Server0` shows IPv4 `10.10.50.10` with default gateway `10.10.50.1`. | Pass | `evidence/19-server0-ipconfig-only.png` |
+| HQ server VLAN ports | `Switch0` FastEthernet0/1 and FastEthernet0/2 are access ports in VLAN 50. | Pass | `evidence/20-switch0-fa1-vlan50.png`, `evidence/21-switch0-fa2-vlan50.png` |
+
+## Branch and DR proof
+
+| Check | Actual result | Status | Evidence |
+| --- | --- | --- | --- |
+| Branch router config import | `Router3` accepted the branch router config merge and returned the success dialog. | Pass | `evidence/15-router3-config-merge-success.png` |
+| Branch switch config import | `Switch2` accepted the branch switch config merge and returned the success dialog. | Pass | `evidence/17-switch2-config-merge-success.png` |
+| DR router config import | `Router2` accepted the DR router config merge and returned the success dialog. | Pass | `evidence/07-dr-router-config-applied.png`, `evidence/16-router2-config-merge-success.png` |
+| DR switch config import | `Switch4` accepted the DR switch config merge and returned the success dialog. | Pass | `evidence/08-dr-switch-config-applied.png`, `evidence/18-switch4-config-merge-success.png` |
+| DR switch interface state | `SW-DR` shows `Vlan299` up/up in `show ip interface brief`. | Pass | `evidence/09-dr-switch-ip-int-brief.png` |
+| DR VLAN membership | `SW-DR` shows the expected DR VLANs and access ports in `show vlan brief`. | Pass | `evidence/10-dr-switch-vlan-brief.png` |
 
 ## Reading the snapshot
 
-- The setup evidence confirms the HQ and DR portions of the lab that are already documented in the repo.
-- The final validation section shows the completed security story: guest traffic can reach only the gateway, private internal traffic is blocked, and authenticated management access works over SSH.
+- The repo now records real config-import proof, service pages, port/VLAN state, server addressing, and workspace link-state evidence.
+- The screenshots are focused on what Packet Tracer actually showed on screen, so the documentation and evidence stay aligned.

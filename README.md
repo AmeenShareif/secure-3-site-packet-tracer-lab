@@ -22,12 +22,12 @@ This repository contains a Cisco Packet Tracer lab for a cybersecurity portfolio
 - `docs/security-controls.md` - control-by-control security summary
 - `docs/build-steps.md` - Packet Tracer build order
 - `docs/services.md` - DNS, web, and Wi-Fi service settings
-- `docs/verification.md` - test matrix and expected outcomes
+- `docs/verification.md` - captured proof matrix and expected outcomes
 - `docs/portfolio-writeup.md` - short portfolio summary
 - `docs/portfolio-visuals.md` - diagrams and charts for the project
 - `docs/project-status.md` - repository snapshot summary
 - `docs/evidence-guide.md` - evidence capture format
-- `docs/test-results.md` - validation snapshot and command output
+- `docs/test-results.md` - validation snapshot and captured proof
 - `evidence/` - screenshots and exported proof
 - `configs/` - IOS configs for each router and switch
 - `cybersecurity-portfolio-lab.pkt` - the live Packet Tracer save file for this lab
@@ -35,7 +35,7 @@ This repository contains a Cisco Packet Tracer lab for a cybersecurity portfolio
 ## Current snapshot
 
 - The repo includes the Packet Tracer save file, device configs, service settings, and screenshots used in the portfolio.
-- `docs/test-results.md` records the final validation results for guest isolation and SSH management.
+- `docs/test-results.md` records the captured config-import proof, service pages, port/VLAN state, server addressing, and workspace link-state evidence.
 - `docs/project-status.md` summarizes the repository in a clean, review-ready format.
 - `evidence/` contains the screenshots referenced by the documentation.
 
@@ -47,7 +47,7 @@ This project is presented as a security and networking lab, not just a basic Pac
 - departments are segmented
 - only approved users can manage network devices
 - branch and DR sites are reachable through controlled routing
-- internet access works through NAT, but internal traffic is still restricted
+- live config imports, service pages, interface/VLAN state, and link-state screenshots prove the lab build
 
 ## Project title
 
