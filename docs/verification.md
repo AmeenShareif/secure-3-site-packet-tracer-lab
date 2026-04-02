@@ -1,8 +1,8 @@
 # Verification Matrix
 
-This checklist matches the validation snapshot in `docs/test-results.md`.
+This matrix matches the validation snapshot recorded in `docs/test-results.md`.
 
-Use `docs/test-results.md` to record the actual output, status, and evidence after you run the tests in Packet Tracer.
+The results in `docs/test-results.md` capture the observed output, status, and evidence from Packet Tracer.
 
 | Test | Source | Destination | Expected result |
 | --- | --- | --- | --- |
@@ -26,5 +26,5 @@ Use `docs/test-results.md` to record the actual output, status, and evidence aft
 - `show ip nat translations`
 - `show access-lists`
 - `show port-security interface`
-- Screenshots of successful and failed pings
+- Screenshots of allowed and blocked pings
 - SSH session screenshot
