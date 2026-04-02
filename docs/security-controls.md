@@ -14,7 +14,7 @@ These are the main controls demonstrated in the lab.
 - HR and Finance can only reach the approved HQ server VLAN and the public internet.
 - Guest VLANs are blocked from internal private networks.
 - Branch users can reach HQ services and the internet, but not arbitrary internal networks.
-- SSH is allowed for network device management; Telnet is not.
+- SSH is used for network device management; Telnet is disabled.
 
 ## Device hardening
 
@@ -30,9 +30,9 @@ These are the main controls demonstrated in the lab.
 - HQ originates the default route toward branch and DR.
 - NAT/PAT on HQ hides internal RFC1918 sources from the public side.
 
-## What this lab demonstrates in a portfolio
+## What this lab shows
 
-- You understand trust boundaries.
-- You can enforce least privilege with ACLs.
-- You can separate management from user traffic.
-- You can show operational validation, not just configuration.
+- Trust boundaries are clear.
+- Least privilege is enforced with ACLs.
+- Management traffic stays separate from user traffic.
+- The lab includes validation, not just configuration.

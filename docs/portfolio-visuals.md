@@ -80,5 +80,5 @@ flowchart LR
   B --> C["Device configs"]
   C --> D["Evidence capture"]
   D --> E["Validation log"]
-  E --> F["Portfolio write-up"]
+  E --> F["Write-up"]
 ```

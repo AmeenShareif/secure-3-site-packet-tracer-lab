@@ -2,9 +2,9 @@
 
 ## Fictional company
 
-**Northstar Logistics** is the fictional company name used for the lab. It keeps the design realistic without tying the project to an actual organization. The setup has a headquarters, a branch office, and a disaster recovery site.
+**Northstar Logistics** is the fictional company name used for the lab. It keeps the lab realistic without naming a real company. The setup has a headquarters, a branch office, and a disaster recovery site.
 
-Security goal:
+Main goals:
 
 - keep guest traffic isolated
 - stop unnecessary movement between departments
@@ -69,4 +69,4 @@ flowchart LR
 - `VLAN 60` guest wireless
 - `VLAN 99` management
 
-The branch and DR sites use their own VLAN ranges so the lab shows multi-site segmentation instead of a flat network.
+The branch and DR sites use their own VLAN ranges so the lab shows multi-site segmentation instead of one flat network.

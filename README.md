@@ -1,6 +1,6 @@
 # Secure 3-Site Packet Tracer Lab
 
-This repository contains a Cisco Packet Tracer lab for a cybersecurity portfolio. The network uses a fictional company so the design can demonstrate segmentation, access control, secure management, routing, NAT, and validation without referencing a real business.
+This repository has a Cisco Packet Tracer lab for my cybersecurity portfolio. I used a fictional company so I could build a realistic network without tying it to a real business.
 
 ## What is included
 
@@ -22,42 +22,42 @@ This repository contains a Cisco Packet Tracer lab for a cybersecurity portfolio
 - `docs/security-controls.md` - control-by-control security summary
 - `docs/build-steps.md` - Packet Tracer build order
 - `docs/services.md` - DNS, web, and Wi-Fi service settings
-- `docs/verification.md` - captured proof matrix and expected outcomes
+- `docs/verification.md` - screenshot map and expected results
 - `docs/portfolio-writeup.md` - short portfolio summary
 - `docs/portfolio-visuals.md` - diagrams and charts for the project
-- `docs/project-status.md` - repository snapshot summary
-- `docs/evidence-guide.md` - evidence capture format
-- `docs/test-results.md` - validation snapshot and captured proof
+- `docs/project-status.md` - quick status page
+- `docs/evidence-guide.md` - screenshot guide
+- `docs/test-results.md` - test results and screenshots
 - `evidence/` - screenshots and exported proof
 - `configs/` - IOS configs for each router and switch
 - `cybersecurity-portfolio-lab.pkt` - the live Packet Tracer save file for this lab
 
-## Current snapshot
+## Current status
 
-- The repo includes the Packet Tracer save file, device configs, service settings, and screenshots used in the portfolio.
-- `docs/test-results.md` records the captured config-import proof, service pages, port/VLAN state, server addressing, and workspace link-state evidence.
-- `docs/project-status.md` summarizes the repository in a clean, review-ready format.
-- `evidence/` contains the screenshots referenced by the documentation.
+- The repo includes the Packet Tracer save file, device configs, service settings, and screenshots.
+- `docs/test-results.md` lists the screenshots and what each one shows.
+- `docs/project-status.md` gives a short status summary.
+- `evidence/` contains the screenshots used in the docs.
 
-## Portfolio angle
+## What it shows
 
-This project is presented as a security and networking lab, not just a basic Packet Tracer build. The main idea is:
+This project is set up as a security and networking lab, not just a basic Packet Tracer build. The main idea is:
 
 - guests are isolated from internal systems
 - departments are segmented
 - only approved users can manage network devices
 - branch and DR sites are reachable through controlled routing
-- live config imports, service pages, interface/VLAN state, and link-state screenshots prove the lab build
+- live config imports, service pages, interface/VLAN state, and link-state screenshots show the build
 
 ## Project title
 
 `Secure Multi-Site Enterprise Network with Segmentation and Access Control`
 
-## How to use this kit
+## How to use it
 
 1. Review the topology in `docs/topology.md`.
 2. Check the IP plan in `docs/ip-plan.md`.
 3. Review the configs in `configs/`.
-4. Compare the validation checklist in `docs/verification.md` with the captured results in `docs/test-results.md`.
+4. Compare the screenshot map in `docs/verification.md` with the results in `docs/test-results.md`.
 5. Open the screenshots in `evidence/`.
-6. Use `docs/project-status.md` as the repository snapshot summary.
+6. Use `docs/project-status.md` as the repository status summary.
