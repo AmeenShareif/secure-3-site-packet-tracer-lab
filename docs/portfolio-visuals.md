@@ -2,6 +2,12 @@
 
 This page collects the diagrams and charts used to explain the project.
 
+## Proof grid
+
+The proof grid is a quick look at the screenshots in `evidence/`.
+
+![Packet Tracer proof grid](proof-grid.png)
+
 ## Network topology
 
 ```mermaid

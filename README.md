@@ -39,6 +39,28 @@ This repository has a Cisco Packet Tracer lab for my cybersecurity portfolio. I 
 - `docs/project-status.md` gives a short status summary.
 - `evidence/` contains the screenshots used in the docs.
 
+## Quick scan
+
+| Area | Details |
+| --- | --- |
+| Sites | HQ, Branch, DR |
+| Security controls | VLANs, OSPF, DHCP, NAT/PAT, ACLs, SSH, port security |
+| Proof in repo | Config merge dialogs, service pages, live link-state, VLAN state, server addressing |
+
+![Packet Tracer proof grid](docs/proof-grid.png)
+
+## Technical snapshot
+
+| Control | What it shows |
+| --- | --- |
+| VLANs | User, guest, server, and management traffic are separated. |
+| OSPF | The sites can route to each other without a flat network. |
+| DHCP | End-user devices can get addresses without manual setup. |
+| NAT/PAT | Internal networks can reach the internet simulation through the edge. |
+| ACLs | Guest and department access is limited on purpose. |
+| SSH | Management access is secured instead of using Telnet. |
+| Port security | Access ports are hardened against unknown devices. |
+
 ## What it shows
 
 This project is set up as a security and networking lab, not just a basic Packet Tracer build. The main idea is:
