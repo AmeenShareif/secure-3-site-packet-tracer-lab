@@ -1,6 +1,8 @@
 hostname SW-DR
 no ip domain-lookup
 service password-encryption
+service timestamps log datetime msec
+service timestamps debug datetime msec
 enable secret C1sc0!SWDR
 vtp mode transparent
 spanning-tree mode rapid-pvst
@@ -8,6 +10,10 @@ ip domain-name corp.lab
 username netadmin privilege 15 secret N3tAdm1n!2026
 crypto key generate rsa modulus 1024
 ip ssh version 2
+logging host 10.10.50.10
+logging trap informational
+ntp server 10.10.50.10
+ntp update-calendar
 !
 vlan 210
  name DR_IT
@@ -78,4 +84,3 @@ interface range FastEthernet0/5 - 24
  shutdown
 !
 end
-

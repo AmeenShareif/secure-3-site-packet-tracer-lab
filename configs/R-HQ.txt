@@ -1,6 +1,8 @@
 hostname R-HQ
 no ip domain-lookup
 service password-encryption
+service timestamps log datetime msec
+service timestamps debug datetime msec
 enable secret C1sc0!HQ
 banner motd ^CUnauthorized access prohibited. Authorized security lab only.^C
 ip domain-name corp.lab
@@ -9,6 +11,10 @@ crypto key generate rsa modulus 1024
 ip ssh version 2
 ip ssh time-out 60
 ip ssh authentication-retries 2
+logging host 10.10.50.10
+logging trap informational
+ntp server 10.10.50.10
+ntp update-calendar
 !
 interface GigabitEthernet0/0
  no ip address

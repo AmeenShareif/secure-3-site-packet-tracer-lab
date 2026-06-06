@@ -45,7 +45,7 @@ This repository has a Cisco Packet Tracer lab for my cybersecurity portfolio. I 
 | --- | --- |
 | Sites | HQ, Branch, DR |
 | Security controls | VLANs, OSPF, DHCP, NAT/PAT, ACLs, SSH, port security |
-| Proof in repo | Config merge dialogs, service pages, live link-state, VLAN state, server addressing |
+| Proof in repo | Config merge dialogs, service pages, live link-state, VLAN state, server addressing, live topology, router logs |
 
 ![Packet Tracer proof grid](docs/proof-grid.png)
 

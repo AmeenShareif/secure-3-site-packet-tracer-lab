@@ -25,5 +25,7 @@ This folder has the screenshots I used for the project. Each image was taken fro
 - `19-server0-ipconfig-only.png` - Server0 IPv4 address and default gateway
 - `20-switch0-fa1-vlan50.png` - `Switch0` FastEthernet0/1 in VLAN 50
 - `21-switch0-fa2-vlan50.png` - `Switch0` FastEthernet0/2 in VLAN 50
+- `22-topology-current.png` - current Packet Tracer workspace after the latest live updates
+- `23-router0-core-links-up.png` - `Router0` CLI log showing the routed subinterfaces and serial link coming up
 
 The file names match `docs/test-results.md`.

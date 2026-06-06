@@ -36,6 +36,13 @@ Every row points to a screenshot in `evidence/`, and every screenshot shows a re
 | DR switch interface state | `SW-DR` shows `Vlan299` up/up in `show ip interface brief`. | Pass | `evidence/09-dr-switch-ip-int-brief.png` |
 | DR VLAN membership | `SW-DR` shows the expected DR VLANs and access ports in `show vlan brief`. | Pass | `evidence/10-dr-switch-vlan-brief.png` |
 
+## Current live checks
+
+| Check | Actual result | Status | Evidence |
+| --- | --- | --- | --- |
+| Current topology snapshot | The saved Packet Tracer workspace shows the current lab layout after the latest live changes. | Pass | `evidence/22-topology-current.png` |
+| Core router live log | `Router0` shows the routed subinterfaces and serial link coming up in the CLI log. | Pass | `evidence/23-router0-core-links-up.png` |
+
 ## Notes
 
 - The screenshots here are the ones I actually used from Packet Tracer.

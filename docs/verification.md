@@ -8,6 +8,8 @@ The list below is the same proof set used in the results file.
 | --- | --- | --- |
 | Lab overview | The full Packet Tracer workspace and the device layout. | `evidence/01-topology-overview.png` |
 | Live link-state | The workspace list with the links in green. | `evidence/11-workspace-links-live.png` |
+| Current topology | The current saved workspace after the latest live Packet Tracer changes. | `evidence/22-topology-current.png` |
+| Core router logs | `Router0` showing the routed subinterfaces and serial link coming up in the CLI log. | `evidence/23-router0-core-links-up.png` |
 | HQ router setup | The HQ router config import succeeded and the router shows the expected interface state. | `evidence/02-hq-router-config-applied.png`, `evidence/03-hq-router-interface-status.png`, `evidence/12-router0-config-merge-success.png` |
 | HQ hardware proof | The HQ router physical view shows the serial module installed. | `evidence/04-hq-router-physical-module.png` |
 | HQ services proof | The DNS and web server pages show the configured lab services. | `evidence/05-hq-dns-record.png`, `evidence/06-hq-web-server-services.png` |
